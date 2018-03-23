@@ -98,6 +98,20 @@ DATASETS = {
         ANN_FN:
             _DATA_DIR + '/coco/annotations/image_info_test-dev2015.json'
     },
+    # ---- 2017 dataset cusomized config ----
+    'coco_2017_train': {
+        IM_DIR:
+            _DATA_DIR + '/coco/coco_train2017',
+        ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_train2017.json'
+    },
+    'coco_2017_val': {
+        IM_DIR:
+            _DATA_DIR + '/coco/coco_val2017',
+        ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_val2017.json'
+    },
+    # ---------------------------------------
     'coco_2017_test': {  # 2017 test uses 2015 test images
         IM_DIR:
             _DATA_DIR + '/coco/coco_test2015',
