@@ -37,7 +37,7 @@ MRCNN:
   CONV_INIT: MSRAFill  # default GaussianFill
 TRAIN:
   WEIGHTS: /workspace/blued/model/pretrained-model-caffe2/imagenet-5k/X-152-32x8d-IN5k.pkl
-  DATASETS: ('coco_2017_train', 'coco_2017_val')
+  DATASETS: ('coco_2017_train')
   SCALES: (640, 672, 704, 736, 768, 800)  # Scale jitter
   MAX_SIZE: 1333
   IMS_PER_BATCH: 1

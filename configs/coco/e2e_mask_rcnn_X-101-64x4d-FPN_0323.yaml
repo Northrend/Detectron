@@ -38,7 +38,7 @@ MRCNN:
 TRAIN:
   # md5sum of weights pkl file: aa14062280226e48f569ef1c7212e7c7
   WEIGHTS: /workspace/blued/model/pretrained-model-caffe2/imagenet-1k/X-101-64x4d.pkl 
-  DATASETS: ('coco_2017_train', 'coco_2017_val')
+  DATASETS: ('coco_2017_train')
   SCALES: (800,)
   MAX_SIZE: 1333
   IMS_PER_BATCH: 1
