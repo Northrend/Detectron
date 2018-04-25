@@ -1,5 +1,6 @@
 MODEL:
   TYPE: generalized_rcnn
+  # CONV_BODY: FPN_nl.add_fpn_ResNet101_nl_conv5_body
   CONV_BODY: FPN.add_fpn_ResNet101_conv5_body
   NUM_CLASSES: 81
   FASTER_RCNN: True
@@ -44,3 +45,11 @@ TEST:
   RPN_PRE_NMS_TOP_N: 1000  # Per FPN level
   RPN_POST_NMS_TOP_N: 1000
 OUTPUT_DIR: ./detectron_test/
+NONLOCAL:
+  USE_MAXPOOL: False
+  USE_ZERO_INIT_CONV: False
+  USE_BN: True
+  CONV3_NONLOCAL: False 
+  CONV4_NONLOCAL: True
+  USE_SCALE: True
+  BATCHSIZE: 1
