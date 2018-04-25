@@ -93,8 +93,8 @@ def space_only_nonlocal(
     if cfg.NONLOCAL.USE_MAXPOOL is True:
         max_pool = model.MaxPool(
             cur, prefix + '_pool',
-            kernels=2,
-            strides=2,
+            kernels=[max_pool_stride, max_pool_stride],
+            strides=[max_pool_stride, max_pool_stride],
             pads=0,
         )
     else:
@@ -137,7 +137,8 @@ def space_only_nonlocal(
     #     shape=(batch_size, dim_inner, -1))
     # -----------------------
 
-    # we have to use explicit batch size (to support arbitrary spacetime size)
+    # # we have to use explicit batch size (to support arbitrary spacetime size)
+    # we have to use explicit batch size (to support arbitrary space size)
     # e.g., (8, 1024, 14, 14) => (8, 1024, 196)
     # no mem optimization 
     theta, theta_shape_4d = model.Reshape(theta, [theta + '_re', theta + '_shape4d'], shape=(batch_size, dim_inner, -1))
