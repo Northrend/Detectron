@@ -223,16 +223,16 @@ def space_only_nonlocal(
         )
         model.param_init_net.ConstantFill(
             [prefix + "_bn_s"], prefix + "_bn_s", value=cfg.NONLOCAL.BN_INIT_GAMMA)
-
+    
     if cfg.NONLOCAL.USE_AFFINE is True:
-        blob_out = model.AffineNd(blob_out, prefix + "_bn", dim_out)
+        blob_out = model.AffineChannel(blob_out, prefix + "_bn", dim_out)
 
     return blob_out
 
 
 def add_nonlocal(model, blob_in, dim_in, dim_out, batch_size, prefix, dim_inner):
-    is_test = model.Split in ['test', 'val']
-    # is_test = False
+    # is_test = model.Split in ['test', 'val']
+    is_test = not model.train 
     blob_out = space_only_nonlocal(
         model, blob_in, dim_in, dim_out, batch_size, prefix, dim_inner, is_test)
     blob_out = model.net.Sum([blob_in, blob_out], prefix + "_nl_sum")
