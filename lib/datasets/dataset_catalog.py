@@ -200,4 +200,22 @@ DATASETS = {
         DEVKIT_DIR:
             _DATA_DIR + '/VOC2012/VOCdevkit2012'
     }
+    # ---- oiv4 coco-style customized config ----
+    'openimage_v4_train': {
+        IM_DIR:
+            _DATA_DIR + '/train',
+        ANN_FN:
+            _DATA_DIR + '/annotations_pascal_style/voc_2007_trainval.json',
+        DEVKIT_DIR:
+            _DATA_DIR + '/VOC2007/VOCdevkit2007'
+    },
+    'openimage_v4_dev': {
+        IM_DIR:
+            _DATA_DIR + '/VOC2007/JPEGImages',
+        ANN_FN:
+            _DATA_DIR + '/VOC2007/annotations/voc_2007_test.json',
+        DEVKIT_DIR:
+            _DATA_DIR + '/VOC2007/VOCdevkit2007'
+    },
+    # ---------------------------------------- 
 }
