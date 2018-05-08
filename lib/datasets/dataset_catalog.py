@@ -98,20 +98,6 @@ DATASETS = {
         ANN_FN:
             _DATA_DIR + '/coco/annotations/image_info_test-dev2015.json'
     },
-    # ---- 2017 dataset cusomized config ----
-    'coco_2017_train': {
-        IM_DIR:
-            _DATA_DIR + '/coco/coco_train2017',
-        ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_train2017.json'
-    },
-    'coco_2017_val': {
-        IM_DIR:
-            _DATA_DIR + '/coco/coco_val2017',
-        ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_val2017.json'
-    },
-    # ---------------------------------------
     'coco_2017_test': {  # 2017 test uses 2015 test images
         IM_DIR:
             _DATA_DIR + '/coco/coco_test2015',
@@ -199,23 +185,39 @@ DATASETS = {
             _DATA_DIR + '/VOC2012/annotations/voc_2012_trainval.json',
         DEVKIT_DIR:
             _DATA_DIR + '/VOC2012/VOCdevkit2012'
-    }
-    # ---- oiv4 coco-style customized config ----
+    },
+    # -------- customized config --------
+    # coco 2017 annotations
+    'coco_2017_train': {
+        IM_DIR:
+            _DATA_DIR + '/coco/coco_train2017',
+        ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_train2017.json'
+    },
+    'coco_2017_val': {
+        IM_DIR:
+            _DATA_DIR + '/coco/coco_val2017',
+        ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_val2017.json'
+    },
+    # oiv4 coco-style annotations
     'openimage_v4_train': {
         IM_DIR:
-            _DATA_DIR + '/train',
+            _DATA_DIR + '/openimage/train',
         ANN_FN:
-            _DATA_DIR + '/annotations_pascal_style/voc_2007_trainval.json',
-        DEVKIT_DIR:
-            _DATA_DIR + '/VOC2007/VOCdevkit2007'
+            _DATA_DIR + '/openimage/annotations/train-annotations-bbox.json'
     },
     'openimage_v4_dev': {
         IM_DIR:
-            _DATA_DIR + '/VOC2007/JPEGImages',
+            _DATA_DIR + '/openimage/validation',
         ANN_FN:
-            _DATA_DIR + '/VOC2007/annotations/voc_2007_test.json',
-        DEVKIT_DIR:
-            _DATA_DIR + '/VOC2007/VOCdevkit2007'
+            _DATA_DIR + '/openimage/annotations/validation-annotations-bbox.json'
     },
-    # ---------------------------------------- 
+    'openimage_v4_test': {
+        IM_DIR:
+            _DATA_DIR + '/openimage/test',
+        ANN_FN:
+            _DATA_DIR + '/openimage/annotations/test-annotations-bbox.json'
+    }
+    # -----------------------------------
 }
