@@ -218,6 +218,13 @@ DATASETS = {
             _DATA_DIR + '/openimage/test',
         ANN_FN:
             _DATA_DIR + '/openimage/annotations/test-annotations-bbox.json'
+    },
+    # juggdet
+    'juggdet_0503_train': {
+        IM_DIR:
+            _DATA_DIR + '/juggdet_0503/Image',
+        ANN_FN:
+            _DATA_DIR + '/juggdet_0503/Lists/annotations/juggdet_0503_train_0612.json'
     }
     # -----------------------------------
 }
