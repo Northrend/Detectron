@@ -21,4 +21,11 @@ detectron/datasets/data/*
 !detectron/datasets/data/README.md
 
 # Generated C files
+<<<<<<< HEAD
 detectron/utils/cython_*.c
+=======
+lib/utils/cython_*.c
+=1.13
+=3.12
+=3.2
+>>>>>>> 7b78187f2bd8f2ca047d114640c7014200e50c21

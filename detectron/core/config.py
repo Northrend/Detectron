@@ -982,6 +982,30 @@ __C.CLUSTER = AttrDict()
 # Flag to indicate if the code is running in a cluster environment
 __C.CLUSTER.ON_CLUSTER = False
 
+# ---------------------------------------------------------------------------- #
+# Nonlocal options
+# ---------------------------------------------------------------------------- #
+
+# Non-local Block
+__C.NONLOCAL = AttrDict()
+__C.NONLOCAL.CONV_INIT_STD = 0.01
+__C.NONLOCAL.NO_BIAS = 0
+__C.NONLOCAL.USE_MAXPOOL = True
+__C.NONLOCAL.USE_SOFTMAX = True
+__C.NONLOCAL.USE_ZERO_INIT_CONV = False
+__C.NONLOCAL.USE_BN = True
+__C.NONLOCAL.USE_SCALE = True
+__C.NONLOCAL.USE_AFFINE = False
+
+__C.NONLOCAL.BN_MOMENTUM = 0.9
+__C.NONLOCAL.BN_EPSILON = 1.0000001e-5
+__C.NONLOCAL.BN_INIT_GAMMA = 0.0
+
+__C.NONLOCAL.LAYER_MOD = 2
+__C.NONLOCAL.CONV3_NONLOCAL = True
+__C.NONLOCAL.CONV4_NONLOCAL = True
+
+__C.NONLOCAL.BATCHSIZE = 1
 
 # ---------------------------------------------------------------------------- #
 # Deprecated options
