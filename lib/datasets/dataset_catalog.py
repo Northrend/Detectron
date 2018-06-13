@@ -205,7 +205,7 @@ DATASETS = {
         IM_DIR:
             _DATA_DIR + '/openimage/train',
         ANN_FN:
-            _DATA_DIR + '/openimage/annotations/train-annotations-bbox.json'
+            _DATA_DIR + '/openimage/annotations/challenge-2018-train-annotations-bbox.json'
     },
     'openimage_v4_dev': {
         IM_DIR:
