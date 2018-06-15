@@ -45,3 +45,22 @@ def get_coco_dataset():
     ]
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
+
+
+def get_juggdet_dataset():
+    """A dummy COCO dataset that includes only the 'classes' field."""
+    ds = AttrDict()
+    classes = [
+        '__background__',
+        'penis',
+        'vulva',
+        'sex',
+        'tits',
+        'breasts',
+        'nipples',
+        'ass',
+        'tback',
+        'anus'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds
