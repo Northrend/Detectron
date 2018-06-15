@@ -51,7 +51,6 @@ def get_juggdet_dataset():
     """A dummy COCO dataset that includes only the 'classes' field."""
     ds = AttrDict()
     classes = [
-<<<<<<< HEAD
         '__background__',
         'penis',
         'vulva',
@@ -62,18 +61,6 @@ def get_juggdet_dataset():
         'ass',
         'tback',
         'anus'
-=======
-        '__background__', 
-	'penis',
-	'vulva',
-	'sex',
-	'tits',
-	'breasts',
-	'nipples',
-	'ass',
-	'tback',
-	'anus'
->>>>>>> 5b756476e45dca6bc49bc0560f6fe0adde70b5ea
     ]
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
