@@ -32,6 +32,7 @@ import logging
 import os
 import sys
 import time
+import pprint
 
 from caffe2.python import workspace
 
@@ -77,10 +78,24 @@ def parse_args():
         type=str
     )
     parser.add_argument(
+        '--threshold',
+        dest='threshold',
+        help='threshold score',
+        default=0.7,
+        type=float
+    )
+    parser.add_argument(
         '--image-ext',
         dest='image_ext',
         help='image file name extension (default: jpg)',
         default='jpg',
+        type=str
+    )
+    parser.add_argument(
+        '--image-prefix',
+        dest='image_prefix',
+        help='image file name prefix',
+        default='',
         type=str
     )
     parser.add_argument(
@@ -94,22 +109,20 @@ def parse_args():
 
 def main(args):
     logger = logging.getLogger(__name__)
-
     merge_cfg_from_file(args.cfg)
     cfg.NUM_GPUS = 1
     args.weights = cache_url(args.weights, cfg.DOWNLOAD_CACHE)
     assert_and_infer_cfg(cache_urls=False)
-
-    assert not cfg.MODEL.RPN_ONLY, \
-        'RPN models are not supported'
-    assert not cfg.TEST.PRECOMPUTED_PROPOSALS, \
-        'Models that require precomputed proposals are not supported'
-
     model = infer_engine.initialize_model_from_cfg(args.weights)
-    dummy_coco_dataset = dummy_datasets.get_coco_dataset()
+    # dummy_coco_dataset = dummy_datasets.get_coco_dataset()
+    # customized dataset
+    dummy_coco_dataset = dummy_datasets.get_juggdet_dataset()
 
     if os.path.isdir(args.im_or_folder):
         im_list = glob.iglob(args.im_or_folder + '/*.' + args.image_ext)
+    elif os.path.splitext(args.im_or_folder)[1] == '.lst':
+        with open(args.im_or_folder,'r') as f:
+            im_list = [os.path.join(args.image_prefix,x.strip()) for x in f.readlines()]
     else:
         im_list = [args.im_or_folder]
 
@@ -125,6 +138,11 @@ def main(args):
             cls_boxes, cls_segms, cls_keyps = infer_engine.im_detect_all(
                 model, im, None, timers=timers
             )
+        # print boxes
+        for idx,cls in enumerate(cls_boxes[1:]):
+            if cls.shape[0]>0:
+                logger.info("CLASS[{}]:".format(dummy_coco_dataset.classes[idx+1]))
+                logger.info(pprint.pformat(cls))
         logger.info('Inference time: {:.3f}s'.format(time.time() - t))
         for k, v in timers.items():
             logger.info(' | {}: {:.3f}s'.format(k, v.average_time))
@@ -144,7 +162,7 @@ def main(args):
             dataset=dummy_coco_dataset,
             box_alpha=0.3,
             show_class=True,
-            thresh=0.7,
+            thresh=args.threshold,
             kp_thresh=2
         )
 
