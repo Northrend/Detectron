@@ -219,6 +219,25 @@ DATASETS = {
         ANN_FN:
             _DATA_DIR + '/openimage/annotations/test-annotations-bbox.json'
     },
+    # oiv4-challenge-2018 coco-style annotations
+    'openimage_challenge_2018_train_off': {
+        IM_DIR:
+            _DATA_DIR + '/openimage/Image',
+        ANN_FN:
+            _DATA_DIR + '/openimage/annotations/challenge-2018-train-official-annotations-bbox.json'
+    },
+    'openimage_challenge_2018_train_ext': {
+        IM_DIR:
+            _DATA_DIR + '/openimage/Image',
+        ANN_FN:
+            _DATA_DIR + '/openimage/annotations/challenge-2018-train-extended-annotations-bbox.json'
+    },
+    'openimage_challenge_2018_validation': {
+        IM_DIR:
+            _DATA_DIR + '/openimage/Image',
+        ANN_FN:
+            _DATA_DIR + '/openimage/annotations/challenge-2018-validation-annotations-bbox.json'
+    },
     # juggdet
     'juggdet_0503_train': {
         IM_DIR:
