@@ -259,7 +259,13 @@ _DATASETS = {
         _IM_DIR:
             _DATA_DIR + '/juggdet_0503/Image',
         _ANN_FN:
-            _DATA_DIR + '/juggdet_0503/Lists/annotations/juggdet_0503_train_0612.json'
+            _DATA_DIR + '/juggdet_0503/Lists/annotations/juggdet_0503_train_0712.json'
+    },
+    'juggdet_0503_test': {
+        _IM_DIR:
+            _DATA_DIR + '/juggdet_0503/Image',
+        _ANN_FN:
+            _DATA_DIR + '/juggdet_0503/Lists/annotations/juggdet_0503_test_0711.json'
     }
     # -----------------------------------
 }
