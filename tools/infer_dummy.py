@@ -33,6 +33,8 @@ import os
 import sys
 import time
 import pprint
+import json
+import numpy as np
 
 from caffe2.python import workspace
 
@@ -52,6 +54,13 @@ c2_utils.import_detectron_ops()
 # OpenCL may be enabled by default in OpenCV3; disable it because it's not
 # thread safe and causes unwanted GPU memory allocations.
 cv2.ocl.setUseOpenCL(False)
+
+
+class empty_image(Exception):
+    '''
+    catch empty image error
+    '''
+    pass
 
 
 def parse_args():
@@ -75,6 +84,13 @@ def parse_args():
         dest='output_dir',
         help='directory for visualization pdfs (default: /tmp/infer_simple)',
         default='/tmp/infer_simple',
+        type=str
+    )
+    parser.add_argument(
+        '--output-json',
+        dest='output_json',
+        help='None',
+        default='tmp.json',
         type=str
     )
     parser.add_argument(
@@ -126,12 +142,20 @@ def main(args):
     else:
         im_list = [args.im_or_folder]
 
+    result = dict()
     for i, im_name in enumerate(im_list):
         out_name = os.path.join(
             args.output_dir, '{}'.format(os.path.basename(im_name) + '.pdf')
         )
+        _ = list()
         logger.info('Processing {} -> {}'.format(im_name, out_name))
-        im = cv2.imread(im_name)
+        try:
+            im = cv2.imread(im_name)
+            if np.shape(im) == tuple():
+                raise empty_image
+        except:
+            logger.error('Reading image failed')
+            continue
         timers = defaultdict(Timer)
         t = time.time()
         with c2_utils.NamedCudaScope(0):
@@ -143,6 +167,12 @@ def main(args):
             if cls.shape[0]>0:
                 logger.info("CLASS[{}]:".format(dummy_coco_dataset.classes[idx+1]))
                 logger.info(pprint.pformat(cls))
+                for box in cls:
+                    if box[-1] >= args.threshold:
+                        temp = [float(x) for x in box]
+                        temp.append(dummy_coco_dataset.classes[idx+1])
+                        _.append(temp)
+        result[os.path.basename(im_name)] = _ 
         logger.info('Inference time: {:.3f}s'.format(time.time() - t))
         for k, v in timers.items():
             logger.info(' | {}: {:.3f}s'.format(k, v.average_time))
@@ -165,6 +195,8 @@ def main(args):
             thresh=args.threshold,
             kp_thresh=2
         )
+    with open(args.output_json,'w') as f:
+        json.dump(result,f,indent=2)
 
 
 if __name__ == '__main__':
