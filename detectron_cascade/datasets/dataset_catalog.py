@@ -98,45 +98,21 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/image_info_test-dev2015.json'
     },
-    'coco_2017_train': {    # new addition by soeaver
-        _IM_DIR:
-            _DATA_DIR + '/coco/coco_train2017',
-        _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_train2017.json',
-        _IM_PREFIX:
-            ''
-    },
-    'coco_2017_val': {    # new addition by soeaver
-        _IM_DIR:
-            _DATA_DIR + '/coco/coco_val2017',
-        _ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_val2017.json',
-        _IM_PREFIX:
-            ''
-    },
-    'coco_2017_unlabeled': {    # new addition by soeaver
-        _IM_DIR:
-            _DATA_DIR + '/coco/coco_unlabeled2017',
-        _ANN_FN:
-            _DATA_DIR + '/coco/annotations/image_info_unlabeled2017.json',
-        _IM_PREFIX:
-            ''
-    },
     'coco_2017_test': {  # 2017 test uses 2015 test images
         _IM_DIR:
-            _DATA_DIR + '/coco/coco_test2017',
+            _DATA_DIR + '/coco/coco_test2015',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/image_info_test2017.json',
         _IM_PREFIX:
-            ''
+            'COCO_test2015_'
     },
     'coco_2017_test-dev': {  # 2017 test-dev uses 2015 test images
         _IM_DIR:
-            _DATA_DIR + '/coco/coco_test2017',
+            _DATA_DIR + '/coco/coco_test2015',
         _ANN_FN:
             _DATA_DIR + '/coco/annotations/image_info_test-dev2017.json',
         _IM_PREFIX:
-            ''
+            'COCO_test2015_'
     },
     'coco_stuff_train': {
         _IM_DIR:
@@ -225,7 +201,73 @@ _DATASETS = {
             _DATA_DIR + '/VOC2012/annotations/voc_2012_val.json',
         _DEVKIT_DIR:
             _DATA_DIR + '/VOC2012/VOCdevkit2012'
+    },
+    # -------- customized config --------
+    # coco 2017 annotations
+    'coco_2017_train': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_train2017',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_train2017.json'
+    },
+    'coco_2017_val': {
+        _IM_DIR:
+            _DATA_DIR + '/coco/coco_val2017',
+        _ANN_FN:
+            _DATA_DIR + '/coco/annotations/instances_val2017.json'
+    },
+    # oiv4 coco-style annotations
+    'openimage_v4_train': {
+        _IM_DIR:
+            _DATA_DIR + '/openimage/train',
+        _ANN_FN:
+            _DATA_DIR + '/openimage/annotations/challenge-2018-train-annotations-bbox.json'
+    },
+    'openimage_v4_dev': {
+        _IM_DIR:
+            _DATA_DIR + '/openimage/validation',
+        _ANN_FN:
+            _DATA_DIR + '/openimage/annotations/validation-annotations-bbox.json'
+    },
+    'openimage_v4_test': {
+        _IM_DIR:
+            _DATA_DIR + '/openimage/test',
+        _ANN_FN:
+            _DATA_DIR + '/openimage/annotations/test-annotations-bbox.json'
+    },
+    # oiv4-challenge-2018 coco-style annotations
+    'openimage_challenge_2018_train_off': {
+        _IM_DIR:
+            _DATA_DIR + '/openimage/Image',
+        _ANN_FN:
+            _DATA_DIR + '/openimage/annotations/challenge-2018-train-official-annotations-bbox.json'
+    },
+    'openimage_challenge_2018_train_ext': {
+        _IM_DIR:
+            _DATA_DIR + '/openimage/Image',
+        _ANN_FN:
+            _DATA_DIR + '/openimage/annotations/challenge-2018-train-extended-annotations-bbox.json'
+    },
+    'openimage_challenge_2018_validation': {
+        _IM_DIR:
+            _DATA_DIR + '/openimage/Image',
+        _ANN_FN:
+            _DATA_DIR + '/openimage/annotations/challenge-2018-validation-annotations-bbox.json'
+    },
+    # juggdet
+    'juggdet_0503_train': {
+        _IM_DIR:
+            _DATA_DIR + '/juggdet_0503/Image',
+        _ANN_FN:
+            _DATA_DIR + '/juggdet_0503/Lists/annotations/juggdet_0503_train_0712.json'
+    },
+    'juggdet_0503_test': {
+        _IM_DIR:
+            _DATA_DIR + '/juggdet_0503/Image',
+        _ANN_FN:
+            _DATA_DIR + '/juggdet_0503/Lists/annotations/juggdet_0503_test_0711.json'
     }
+    # -----------------------------------
 }
 
 
