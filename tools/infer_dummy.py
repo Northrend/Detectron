@@ -162,7 +162,7 @@ def main(args):
             cls_boxes, cls_segms, cls_keyps = infer_engine.im_detect_all(
                 model, im, None, timers=timers
             )
-        # print boxes
+        # print boxes as [x1,y1,x2,y2,score,category]
         for idx,cls in enumerate(cls_boxes[1:]):
             if cls.shape[0]>0:
                 logger.info("CLASS[{}]:".format(dummy_coco_dataset.classes[idx+1]))
