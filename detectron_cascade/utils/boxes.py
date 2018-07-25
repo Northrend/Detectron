@@ -59,10 +59,13 @@ def boxes_area(boxes):
     w = (boxes[:, 2] - boxes[:, 0] + 1)
     h = (boxes[:, 3] - boxes[:, 1] + 1)
     areas = w * h
+ 
+    # print(areas)
+    # if np.all(areas < 0):
+    #     print(boxes[np.where(areas < 0)])
 
-    # print(np.where(areas < 0))
-    assert np.all(areas >= 0), 'Negative areas founds, negative rate: {} / {}, negative anchor: {}, idx of anchor: {}'.format(
-        np.where(areas < 0)[0].shape, areas.shape[0], boxes[np.where(areas < 0)[0], :], np.where(areas < 0)[0])
+    # assert np.all(areas >= 0), 'Negative areas founds, negative rate: {} / {}, negative anchor: {}, idx of anchor: {}'.format(
+    #     np.where(areas < 0)[0].shape, areas.shape[0], boxes[np.where(areas < 0)[0], :], np.where(areas < 0)[0])
     return areas
 
 

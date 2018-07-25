@@ -346,8 +346,8 @@ def _add_multilevel_rois(blobs, stage_num):
         ws = blobs[rois_blob_name][:, 3] - blobs[rois_blob_name][:, 1] + 1
         hs = blobs[rois_blob_name][:, 4] - blobs[rois_blob_name][:, 2] + 1
         areas = ws * hs
-        assert np.all(areas >= 0), 'Negative areas founds when add multilevel rois, negative rate: {} / {}, negative anchor: {}, idx of anchor: {}'.format(
-        np.where(areas < 0)[0].shape, areas.shape[0], blobs[rois_blob_name][np.where(areas < 0)[0], :], np.where(areas < 0)[0])
+        # assert np.all(areas >= 0), 'Negative areas founds when add multilevel rois, negative rate: {} / {}, negative anchor: {}, idx of anchor: {}'.format(
+        # np.where(areas < 0)[0].shape, areas.shape[0], blobs[rois_blob_name][np.where(areas < 0)[0], :], np.where(areas < 0)[0])
         fpn.add_multilevel_roi_blobs(
             blobs, rois_blob_name, blobs[rois_blob_name], target_lvls, lvl_min,
             lvl_max

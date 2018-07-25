@@ -32,7 +32,7 @@ CASCADERCNN:
   BBOX_REG_WEIGHTS_STAGE3: (30., 30., 15., 15.)
 TRAIN:
   WEIGHTS: '/workspace/blademaster/model/openimage/detectron_pretrained_model/R-50.pkl'
-  DATASETS: ('coco_2017_train',)
+  DATASETS: ('coco_2017_val',)
   SCALES: (800,)
   MAX_SIZE: 1333 
   BATCH_SIZE_PER_IM: 512
