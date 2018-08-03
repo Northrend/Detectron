@@ -64,3 +64,13 @@ def get_juggdet_dataset():
     ]
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
+
+def get_oiv4_hc_50_dataset():
+    """A dummy COCO dataset that includes only the 'classes' field."""
+    ds = AttrDict()
+    classes = [
+        '__background__',
+        '/m/0fqt361', '/m/0271t', '/m/05bm6', '/m/0dtln', '/m/07cx4', '/m/0f4s2w', '/m/06bt6', '/m/027pcv', '/m/0jbk', '/m/0wdt60w', '/m/02ctlc', '/m/01s105', '/m/0djtd', '/m/01prls', '/m/03xxp', '/m/0fqfqc', '/m/0gjbg72', '/m/01btn', '/m/04h8sr', '/m/015h_t', '/m/04brg2', '/m/0dv77', '/m/01s55n', '/m/019dx1', '/m/04szw', '/m/0h99cwc', '/m/02rdsp', '/m/083kb', '/m/0frqm', '/m/04m6gz', '/m/0k0pj', '/m/0283dt1', '/m/0dkzw', '/m/0k65p', '/m/07mhn', '/m/039xj_', '/m/0k5j', '/m/0hf58v5', '/m/035r7c', '/m/0c_jw', '/m/03q69', '/m/07yv9', '/m/0175cv', '/m/01rzcn', '/m/0dzf4', '/m/03m3vtv', '/m/04hgtk', '/m/014sv8', '/m/02pkr5', '/m/02d1br'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds

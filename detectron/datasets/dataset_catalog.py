@@ -260,6 +260,12 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/openimage/annotations/challenge-2018-validation-annotations-bbox.json'
     },
+    'openimage_challenge_2018_validation_hc_50': {
+        _IM_DIR:
+            _DATA_DIR + '/openimage/Image',
+        _ANN_FN:
+            _DATA_DIR + '/openimage/annotations/challenge-2018-validation-hardcat-50-annotations-bbox.json'
+    },
     # juggdet
     'juggdet_0503_train': {
         _IM_DIR:
