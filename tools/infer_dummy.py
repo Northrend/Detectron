@@ -132,7 +132,8 @@ def main(args):
     model = infer_engine.initialize_model_from_cfg(args.weights)
     # dummy_coco_dataset = dummy_datasets.get_coco_dataset()
     # customized dataset
-    dummy_coco_dataset = dummy_datasets.get_juggdet_dataset()
+    # dummy_coco_dataset = dummy_datasets.get_juggdet_dataset()
+    dummy_coco_dataset = dummy_datasets.get_oiv4_hc_50_dataset()
 
     if os.path.isdir(args.im_or_folder):
         im_list = glob.iglob(args.im_or_folder + '/*.' + args.image_ext)
