@@ -272,6 +272,19 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/openimage/annotations/challenge-2018-validation-hardcat-50-annotations-bbox.json'
     },
+    # blued 
+    'blued_0920_train': {
+        _IM_DIR:
+            _DATA_DIR + '/blued_0920/Image',
+        _ANN_FN:
+            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_box_only.json'
+    },
+    'blued_0920_test': {
+        _IM_DIR:
+            _DATA_DIR + '/blued_0920/Image',
+        _ANN_FN:
+            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920-test.json'
+    },
     # juggdet
     'juggdet_0503_train': {
         _IM_DIR:
