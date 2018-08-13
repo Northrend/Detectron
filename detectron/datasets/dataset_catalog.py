@@ -254,6 +254,12 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/openimage/annotations/challenge-2018-train-hardcat-50-annotations-bbox.json'
     },
+    'openimage_challenge_2018_train_hc_51': {
+        _IM_DIR:
+            _DATA_DIR + '/openimage/Image',
+        _ANN_FN:
+            _DATA_DIR + '/openimage/annotations/challenge-2018-train-hardcat-51-annotations-bbox.json'
+    },
     'openimage_challenge_2018_validation': {
         _IM_DIR:
             _DATA_DIR + '/openimage/Image',
