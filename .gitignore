@@ -23,7 +23,7 @@ detectron/datasets/data/*
 # Generated C files
 detectron/utils/cython_*.c
 
-# customize
+# customized
 =1.13
 =3.12
 =3.2
