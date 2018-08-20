@@ -159,18 +159,27 @@ def im_detect_bbox(model, im, target_scale, target_max_size, boxes=None):
 
     # Read out blobs
     if cfg.MODEL.FASTER_RCNN:
-        rois = workspace.FetchBlob(core.ScopedName('rois_3rd'))
+        rois_3 = workspace.FetchBlob(core.ScopedName('rois_3rd'))
+        rois_2 = workspace.FetchBlob(core.ScopedName('rois_2nd'))
+        rois_1 = workspace.FetchBlob(core.ScopedName('rois_1st'))
+        rois = (rois_3+rois_2+rois_1)/3.0
         # unscale back to raw image space
         boxes = rois[:, 1:5] / im_scale
 
     # Softmax class probabilities
-    scores = workspace.FetchBlob(core.ScopedName('cls_prob_3rd')).squeeze()
+    scores_3 = workspace.FetchBlob(core.ScopedName('cls_prob_3rd')).squeeze()
+    scores_2 = workspace.FetchBlob(core.ScopedName('cls_prob_2nd')).squeeze()
+    scores_1 = workspace.FetchBlob(core.ScopedName('cls_prob_1st')).squeeze()
+    scores = (scores_3+scores_2+scores_1)/3.0
     # In case there is 1 proposal
     scores = scores.reshape([-1, scores.shape[-1]])
 
     if cfg.TEST.BBOX_REG:
         # Apply bounding-box regression deltas
-        box_deltas = workspace.FetchBlob(core.ScopedName('bbox_pred_3rd')).squeeze()
+        box_deltas_3 = workspace.FetchBlob(core.ScopedName('bbox_pred_3rd')).squeeze()
+        box_deltas_2 = workspace.FetchBlob(core.ScopedName('bbox_pred_2nd')).squeeze()
+        box_deltas_1 = workspace.FetchBlob(core.ScopedName('bbox_pred_1st')).squeeze()
+        box_deltas = (box_deltas_3+box_deltas_2+box_deltas_1)/3.0
         # In case there is 1 proposal
         box_deltas = box_deltas.reshape([-1, box_deltas.shape[-1]])
         if cfg.MODEL.CLS_AGNOSTIC_BBOX_REG:
