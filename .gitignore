@@ -24,6 +24,7 @@ detectron/datasets/data/*
 detectron/utils/cython_*.c
 
 # customized
+detectron_cascade/datasets/data/
 =1.13
 =3.12
 =3.2

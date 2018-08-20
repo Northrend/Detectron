@@ -6,14 +6,15 @@ MODEL:
   CASCADE_RCNN: True
   NUM_RCNN_STAGE: 3
   CLS_AGNOSTIC_BBOX_REG: False
-NUM_GPUS: 1
+NUM_GPUS: 8
 SOLVER:
   WEIGHT_DECAY: 0.0001
   LR_POLICY: steps_with_decay
-  BASE_LR: 0.02
+  BASE_LR: 0.005
   GAMMA: 0.1
-  MAX_ITER: 180000
+  MAX_ITER: 180000 
   STEPS: [0, 120000, 160000]
+  WARM_UP_ITERS: 500
 FPN:
   FPN_ON: True
   MULTILEVEL_ROIS: True
@@ -31,8 +32,8 @@ CASCADERCNN:
   BBOX_REG_WEIGHTS_STAGE2: (20., 20., 10., 10.)
   BBOX_REG_WEIGHTS_STAGE3: (30., 30., 15., 15.)
 TRAIN:
-  WEIGHTS: '/workspace/blademaster/model/openimage/detectron_pretrained_model/R-50.pkl'
-  DATASETS: ('coco_2017_val',)
+  WEIGHTS: '/workspace/northrend/coco/model/pretrained_model/imagenet-1k/R-50.pkl'
+  DATASETS: ('coco_2017_train',)
   SCALES: (800,)
   MAX_SIZE: 1333 
   BATCH_SIZE_PER_IM: 512
