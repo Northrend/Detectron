@@ -115,6 +115,13 @@ def parse_args():
         type=str
     )
     parser.add_argument(
+        '--dataset',
+        dest='dataset_name',
+        help='dataset name: coco, oiv4_hc_50, blued, juggdet',
+        default='coco',
+        type=str
+    )
+    parser.add_argument(
         'im_or_folder', help='image or folder of images', default=None
     )
     if len(sys.argv) == 1:
@@ -124,6 +131,7 @@ def parse_args():
 
 
 def main(args):
+    supported_dataset = ['coco', 'oiv4_hc_50', 'blued', 'juggdet']
     logger = logging.getLogger(__name__)
     merge_cfg_from_file(args.cfg)
     cfg.NUM_GPUS = 1
@@ -132,9 +140,8 @@ def main(args):
     model = infer_engine.initialize_model_from_cfg(args.weights)
     # dummy_coco_dataset = dummy_datasets.get_coco_dataset()
     # ---- customized dataset ----
-    # dummy_coco_dataset = dummy_datasets.get_juggdet_dataset()
-    # dummy_coco_dataset = dummy_datasets.get_oiv4_hc_50_dataset()
-    dummy_coco_dataset = dummy_datasets.get_blued_dataset()
+    assert args.dataset_name in supported_dataset, 'Invalid dataset name' 
+    exec("dummy_coco_dataset = dummy_datasets.get_{}_dataset()".format(args.dataset_name))
 
     if os.path.isdir(args.im_or_folder):
         im_list = glob.iglob(args.im_or_folder + '/*.' + args.image_ext)
