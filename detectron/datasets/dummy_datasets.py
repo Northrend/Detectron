@@ -74,3 +74,13 @@ def get_oiv4_hc_50_dataset():
     ]
     ds.classes = {i: name for i, name in enumerate(classes)}
     return ds
+
+def get_blued_dataset():
+    """A dummy COCO dataset that includes only the 'classes' field."""
+    ds = AttrDict()
+    classes = [
+        '__background__',
+        'beard', 'black_frame_glasses', 'police_cap', 'sun_glasses', 'stud_earrings', 'mouth_mask', 'bangs', 'tattoo', 'shirt', 'suit', 'tie', 'belt', 'jeans', 'shorts', 'leg_hair', 'military_uniform', 'under_shirt', 'gloves', 'pecs', 'abdominal_muscles', 'calf', 'briefs', 'boxers', 'butt', 'leather_shoes', 'black_socks', 'white_socks', 'feet', 'non_leather_shoes', 'hot_pants'
+    ]
+    ds.classes = {i: name for i, name in enumerate(classes)}
+    return ds
