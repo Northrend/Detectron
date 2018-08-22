@@ -272,12 +272,18 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/openimage/annotations/challenge-2018-validation-hardcat-50-annotations-bbox.json'
     },
+    'openimage_challenge_2018_validation_hc_51': {
+        _IM_DIR:
+            _DATA_DIR + '/openimage/Image',
+        _ANN_FN:
+            _DATA_DIR + '/openimage/annotations/challenge-2018-validation-hardcat-51-annotations-bbox.json'
+    },
     # blued 
     'blued_0920_train': {
         _IM_DIR:
             _DATA_DIR + '/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920.json'
+            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_train.json'
     },
     'blued_0920_test': {
         _IM_DIR:
