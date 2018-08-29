@@ -50,12 +50,21 @@ TEST:
   FORCE_JSON_DATASET_EVAL: True  # use coco eval
   SCALE: 800
   MAX_SIZE: 1333
+<<<<<<< HEAD
   NMS: 0.4
   BBOX_VOTE:
     ENABLED: True
     VOTE_TH: 0.5
   RPN_PRE_NMS_TOP_N: 6000  # Per FPN level
   RPN_POST_NMS_TOP_N: 2000 
+=======
+  NMS: 0.5
+  # BBOX_VOTE:
+  #   ENABLED: True
+  #   VOTE_TH: 0.9
+  RPN_PRE_NMS_TOP_N: 1000  # Per FPN level
+  RPN_POST_NMS_TOP_N: 1000
+>>>>>>> 595e73d94196a4c458abbadca61fe188a56e7878
   # BBOX_AUG:
   #   ENABLED: True
   #   SCORE_HEUR: UNION
