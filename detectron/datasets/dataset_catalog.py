@@ -278,6 +278,12 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/openimage/annotations/challenge-2018-validation-hardcat-51-annotations-bbox.json'
     },
+    'openimage_v4_challenge_2018_test': {
+        _IM_DIR:
+            _DATA_DIR + '/openimage/test-challenge/challenge2018_test',
+        _ANN_FN:
+            _DATA_DIR + '/openimage/annotations/challenge-2018-test-annotations-bbox-mock.json'
+    },
     # blued 
     'blued_0920_train': {
         _IM_DIR:

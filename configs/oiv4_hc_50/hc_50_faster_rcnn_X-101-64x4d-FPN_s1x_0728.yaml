@@ -30,7 +30,7 @@ FAST_RCNN:
   ROI_XFORM_SAMPLING_RATIO: 2
 TRAIN:
   # md5sum of weights pkl file: aa14062280226e48f569ef1c7212e7c7
-  WEIGHTS: https://s3-us-west-2.amazonaws.com/detectron/ImageNetPretrained/FBResNeXt/X-101-64x4d.pkl
+  WEIGHTS: 
   DATASETS: ('openimage_challenge_2018_train_hc_50', )
   SCALES: (400,600,800,1000,1200)
   MAX_SIZE: 1600 
