@@ -131,7 +131,7 @@ def parse_args():
 
 
 def main(args):
-    supported_dataset = ['coco', 'oiv4_hc_50', 'blued', 'juggdet']
+    supported_dataset = ['coco', 'oiv4', 'oiv4_hc_50', 'blued', 'juggdet']
     logger = logging.getLogger(__name__)
     merge_cfg_from_file(args.cfg)
     cfg.NUM_GPUS = 1
