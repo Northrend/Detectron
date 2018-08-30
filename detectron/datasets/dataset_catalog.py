@@ -278,7 +278,7 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/openimage/annotations/challenge-2018-validation-hardcat-51-annotations-bbox.json'
     },
-    'openimage_v4_challenge_2018_test': {
+    'openimage_challenge_2018_test': {
         _IM_DIR:
             _DATA_DIR + '/openimage/test-challenge/challenge2018_test',
         _ANN_FN:
