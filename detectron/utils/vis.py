@@ -300,12 +300,13 @@ def vis_one_image(
             plt.Rectangle((bbox[0], bbox[1]),
                           bbox[2] - bbox[0],
                           bbox[3] - bbox[1],
-                          fill=False, edgecolor='g',
+                          fill=False, edgecolor='r',
                           linewidth=0.5, alpha=box_alpha))
 
         if show_class:
             ax.text(
-                bbox[0], bbox[1] - 2,
+                # bbox[0], bbox[1] - 2,
+                bbox[0]+1, bbox[1]+7,
                 get_class_string(classes[i], score, dataset),
                 fontsize=3,
                 family='serif',
