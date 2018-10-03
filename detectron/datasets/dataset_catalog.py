@@ -278,7 +278,7 @@ _DATASETS = {
         _ANN_FN:
             _DATA_DIR + '/openimage/annotations/challenge-2018-validation-hardcat-51-annotations-bbox.json'
     },
-    'openimage_v4_challenge_2018_test': {
+    'openimage_challenge_2018_test': {
         _IM_DIR:
             _DATA_DIR + '/openimage/test-challenge/challenge2018_test',
         _ANN_FN:
@@ -287,123 +287,129 @@ _DATASETS = {
     # blued 
     'blued_0920_train': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_train.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_train.json'
     },
     'blued_0920_test': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test.json'
     },
     'blued_0920_test_abdominal_muscles': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_abdominal_muscles.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_abdominal_muscles.json'
     },
     'blued_0920_test_bangs': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_bangs.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_bangs.json'
     },
     'blued_0920_test_beard': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_beard.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_beard.json'
     },
     'blued_0920_test_black_frame_glasses': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_black_frame_glasses.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_black_frame_glasses.json'
     },
     'blued_0920_test_black_socks': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_black_socks.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_black_socks.json'
     },
     'blued_0920_test_boxers': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_boxers.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_boxers.json'
     },
     'blued_0920_test_briefs': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_briefs.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_briefs.json'
     },
     'blued_0920_test_calf': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_calf.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_calf.json'
     },
     'blued_0920_test_feet': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_feet.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_feet.json'
     },
     'blued_0920_test_leather_shoes': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_leather_shoes.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_leather_shoes.json'
     },
     'blued_0920_test_pecs': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_pecs.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_pecs.json'
     },
     'blued_0920_test_shorts': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_shorts.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_shorts.json'
     },
     'blued_0920_test_stud_earrings': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_stud_earrings.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_stud_earrings.json'
     },
     'blued_0920_test_suit': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_suit.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_suit.json'
     },
     'blued_0920_test_sun_glasses': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_sun_glasses.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_sun_glasses.json'
     },
     'blued_0920_test_tattoo': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_tattoo.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_tattoo.json'
     },
     'blued_0920_test_under_shirt': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_under_shirt.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_under_shirt.json'
     },
     'blued_0920_test_white_socks': {
         _IM_DIR:
-            _DATA_DIR + '/blued_0920/Image',
+            _DATA_DIR + '/blued/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_test_white_socks.json'
+            _DATA_DIR + '/blued/blued_0920/Lists/annotations/annotation-0920_test_white_socks.json'
+    },
+    'qblued_20180803_train': {
+        _IM_DIR:
+            _DATA_DIR + '/blued/qblued_20180803/Image',
+        _ANN_FN:
+            _DATA_DIR + '/blued/qblued_20180803/Lists/annotations/qblued_20180803_0926_train.json'
     },
     # juggdet
     'juggdet_0503_train': {
