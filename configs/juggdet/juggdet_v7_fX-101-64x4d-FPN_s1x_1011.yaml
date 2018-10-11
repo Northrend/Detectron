@@ -10,9 +10,10 @@ SOLVER:
   # 1x schedule (note TRAIN.IMS_PER_BATCH: 1)
   BASE_LR: 0.01
   GAMMA: 0.1
-  WARM_UP_ITERS: 200 
-  MAX_ITER: 35044 
-  STEPS: [0, 23381, 31156]
+  # epoch size: 58042/8=7255.25
+  MAX_ITER: 256000    # 35.16e 
+  STEPS: [0, 197000, 236000]    # 27.06e, 32.46e
+  WARM_UP_ITERS: 500  # 0.068e 
 FPN:
   FPN_ON: True
   MULTILEVEL_ROIS: True
@@ -29,17 +30,18 @@ FAST_RCNN:
   ROI_XFORM_SAMPLING_RATIO: 2
 TRAIN:
   WEIGHTS: https://s3-us-west-2.amazonaws.com/detectron/ImageNetPretrained/FBResNeXt/X-101-64x4d.pkl
-  DATASETS: ('juggdet_0503_train',)
-  SCALES: (400, 600, 800, 1000, 1200)
+  DATASETS: ('juggdet_0503_train','juggdet_0622_train')
+  SCALES: (400, 600, 800, 1000)
   MAX_SIZE: 2000 
   IMS_PER_BATCH: 1
   BATCH_SIZE_PER_IM: 512
   RPN_PRE_NMS_TOP_N: 2000  # Per FPN level
+  SNAPSHOT_ITERS: 7200 # 2e
 TEST:
   DATASETS: ('juggdet_0503_test',)
   SCALE: 800 
-  MAX_SIZE: 2000 
+  MAX_SIZE: 1600 
   NMS: 0.4
   RPN_PRE_NMS_TOP_N: 2000  # Per FPN level
-  RPN_POST_NMS_TOP_N: 2000 
+  RPN_POST_NMS_TOP_N: 2000
 OUTPUT_DIR: .
