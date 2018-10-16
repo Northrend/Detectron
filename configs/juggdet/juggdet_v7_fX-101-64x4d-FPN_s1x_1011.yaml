@@ -32,6 +32,7 @@ TRAIN:
   WEIGHTS: https://s3-us-west-2.amazonaws.com/detectron/ImageNetPretrained/FBResNeXt/X-101-64x4d.pkl
   DATASETS: ('juggdet_0503_train','juggdet_0622_train')
   SCALES: (400, 600, 800, 1000)
+  # SCALES: (600, 700, 800, 900, 1000)
   MAX_SIZE: 2000 
   IMS_PER_BATCH: 1
   BATCH_SIZE_PER_IM: 512

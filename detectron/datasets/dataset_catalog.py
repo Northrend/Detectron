@@ -428,7 +428,7 @@ _DATASETS = {
         _IM_DIR:
             _DATA_DIR + '/juggdet/juggdet_0622/Image',
         _ANN_FN:
-            _DATA_DIR + '/juggdet/juggdet_0622/Lists/annotations/juggdet_0622_train_0712.json'
+            _DATA_DIR + '/juggdet/juggdet_0622/Lists/annotations/juggdet_0622_train_0927.json'
     }
     # -----------------------------------
 }
