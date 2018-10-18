@@ -82,8 +82,8 @@ def parse_args():
     parser.add_argument(
         '--output-dir',
         dest='output_dir',
-        help='directory for visualization pdfs (default: /tmp/infer_simple)',
-        default='/tmp/infer_simple',
+        help='directory for visualization pdfs (default: no visualization)',
+        default='',
         type=str
     )
     parser.add_argument(
@@ -157,7 +157,10 @@ def main(args):
             args.output_dir, '{}'.format(os.path.basename(im_name) + '.pdf')
         )
         _ = list()
-        logger.info('Processing {} -> {}'.format(im_name, out_name))
+        if args.output_dir:     # visualize
+            logger.info('Processing [{}] {} -> {}'.format(i, im_name, out_name))
+        else:
+            logger.info('Processing [{}] {}'.format(i, im_name))
         try:
             im = cv2.imread(im_name)
             if np.shape(im) == tuple():
@@ -191,19 +194,20 @@ def main(args):
                 'rest (caches and auto-tuning need to warm up)'
             )
 
-        vis_utils.vis_one_image(
-            im[:, :, ::-1],  # BGR -> RGB for visualization
-            im_name,
-            args.output_dir,
-            cls_boxes,
-            cls_segms,
-            cls_keyps,
-            dataset=dummy_coco_dataset,
-            box_alpha=0.3,
-            show_class=True,
-            thresh=args.threshold,
-            kp_thresh=2
-        )
+        if args.output_dir:     # visualize
+            vis_utils.vis_one_image(
+                im[:, :, ::-1],  # BGR -> RGB for visualization
+                im_name,
+                args.output_dir,
+                cls_boxes,
+                cls_segms,
+                cls_keyps,
+                dataset=dummy_coco_dataset,
+                box_alpha=0.3,
+                show_class=True,
+                thresh=args.threshold,
+                kp_thresh=2
+            )
     with open(args.output_json,'w') as f:
         json.dump(result,f,indent=2)
 
