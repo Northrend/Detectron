@@ -24,6 +24,9 @@
 cimport cython
 import numpy as np
 cimport numpy as np
+# ---- fixing GNU date err ----
+# import argsort 
+# ---- fixing GNU date err ----
 
 cdef inline np.float32_t max(np.float32_t a, np.float32_t b) nogil:
     return a if a >= b else b
@@ -42,7 +45,11 @@ def nms(np.ndarray[np.float32_t, ndim=2] dets, np.float32_t thresh):
     cdef np.ndarray[np.float32_t, ndim=1] scores = dets[:, 4]
 
     cdef np.ndarray[np.float32_t, ndim=1] areas = (x2 - x1 + 1) * (y2 - y1 + 1)
+    # ---- fixing GNU date err ----
     cdef np.ndarray[np.int_t, ndim=1] order = scores.argsort()[::-1]
+    # cdef np.ndarray[np.int_t, ndim=1] order = np.empty((ndets), dtype=np.intp)
+    # argsort.argsort(-scores, order)
+    # ---- fixing GNU date err ----
 
     cdef int ndets = dets.shape[0]
     cdef np.ndarray[np.int_t, ndim=1] suppressed = \
