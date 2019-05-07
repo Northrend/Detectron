@@ -283,7 +283,7 @@ _DATASETS = {
         _IM_DIR:
             _DATA_DIR + '/blued_0920/Image',
         _ANN_FN:
-            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920.json'
+            _DATA_DIR + '/blued_0920/Lists/annotations/annotation-0920_train.json'
     },
     'blued_0920_test': {
         _IM_DIR:
